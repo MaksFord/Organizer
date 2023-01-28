@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Organizer</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div id="todo-app">
@@ -14,11 +14,10 @@
             <input type="text" id="task-input" placeholder="Add a task...">
             <button type="submit">Add</button>
         </form>
-        <ul id="task-list"></ul>
-        <li>kekw</li>
+        <ul id="task-list"></ul>      
     </div>
 
-
+<button onclick="localStorage.clear()">Clear Local Storage</button>
     
 </body>
 </html>
