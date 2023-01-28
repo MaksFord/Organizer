@@ -1,5 +1,9 @@
 window.onload=function(){
         document.getElementById("task-list").innerHTML=localStorage.getItem("MyList")
+        delButtons=document.querySelectorAll(".delButton");
+        delButtons.forEach((delButton)=>{
+                delButton.addEventListener("click",(e)=>delParent(e))
+        })
 }
 
 const form=document.getElementById("newTaskForm");
@@ -24,10 +28,7 @@ form.addEventListener("submit",
         const delButton= document.createElement("button");
         delButton.className="delButton";
         delButton.textContent="X";
-        delButton.addEventListener("click", function(){
-                let parent=delButton.parentNode;
-                parent.parentNode.removeChild(parent);
-        })
+        delButton.addEventListener("click", (e)=>delParent(e))
         li.appendChild(delButton);
 
         taskList.appendChild(li);
@@ -41,8 +42,13 @@ form.addEventListener("submit",
 
 
 
-function delLi (){
+function delParent (event){
+        let clicked=event.target;
+        let parent=clicked.parentNode;
+        parent.parentNode.removeChild(parent);
 
+        localStorage.setItem("MyList",
+        document.getElementById("task-list").innerHTML);
 }
 
 
