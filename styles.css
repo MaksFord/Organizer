@@ -1,9 +1,33 @@
-#newTaskForm {
-    color: red;
-    background-color: blue;
+#Forms {
+    display:flex;
 }
+#oneSittingTaskForm {
+    color:white;
+    background-color: red;
+}
+#everydayTaskForm {
+    color: white;
+    background-color: #0c0c41;
+}
+#onDateTaskForm{
+    color: white;
+    background-color: #045804;
+}
+form{
+    flex:1;
+    padding:20px;
+}
+
+
 li {
     list-style: none;
 }
+.timeIsUp {
+    background-color:red;
+    color: white;
+}
 
+input[type="checkbox"]:checked + label{
+    text-decoration: line-through;
+}
 
